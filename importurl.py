@@ -1,6 +1,9 @@
 #retrieving log fles across network and creating new local location for the data
-import urllib.request 
-urllib.request.urlretrieve("https://s3.amazonaws.com/tcmg476/http_access_log", "aws.log")
+from urllib.request import urlretrieve
+URL_PATH="https://s3.amazonaws.com/tcmg476/http_access_log"
+Local_Copy='aws.log'
+headers=urlretrieve(URL_PATH, Local_Copy)
+
 
 #reading file to look for 2 patterns
 result1={}
