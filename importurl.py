@@ -26,8 +26,8 @@ now = datetime.datetime.now
 earlier = datetime.datetime(2019, 9, 17)
 
 for line in lines:
-data = lines.split()
-date = data[3][1::].split(':')
+    data = lines.split()
+    date = data[3][1::].split(':')
      if re.search(earlier>date<=now, line):
           past_year_requests+=1
 return(past_year_requests)
