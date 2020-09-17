@@ -3,8 +3,8 @@ import urllib.request
 urllib.request.urlretrieve("https://s3.amazonaws.com/tcmg476/http_access_log", "aws.log")
 
 #reading file to look for 2 patterns
-result1="total_log_requests":0
-result2="past_year_requests":{}
+result1="total_log_requests: "
+result2="past_year_requests: "
 
 file = open("aws.log", "r")
 
