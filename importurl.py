@@ -6,8 +6,8 @@ headers=urlretrieve(URL_PATH, Local_Copy)
 
 
 #reading file to look for 2 patterns
-total_log_requests=int()
-past_year_requests=int()
+total_log_requests={int()}
+past_year_requests={int()}
 
 file = open("aws.log", "r")
 
