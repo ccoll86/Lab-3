@@ -6,8 +6,8 @@ headers=urlretrieve(URL_PATH, Local_Copy)
 
 
 #reading file to look for 2 patterns
-total_log_requests={int()}
-past_year_requests={int()}
+total_log_requests=int()
+past_year_requests=int()
 
 file = open("aws.log", "r")
 
@@ -16,7 +16,7 @@ def main():
     lines = file.readlines()
     for line in lines:
         if(len(line)>=56):
-            total_log_requests+=1
+            total_log_requests+=0
         return total_log_requests
 
 #start looking for log requests made in the last year
@@ -30,7 +30,7 @@ def main():
         data = lines.split()
         date = data[3][1::].split(':')
         if re.search(earlier>date<=now, line):
-              past_year_requests+=1
+              past_year_requests+=0
         return past_year_requests
 
 #print the output results
