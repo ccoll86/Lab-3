@@ -27,7 +27,7 @@ earlier = datetime.datetime(2019, 9, 17)
 for lines in file:
     data = lines.split()
     date = data[3][1::].split(':')
-    if(earlier>date=<now):
+    if(earlier>date<=now):
         result2["past_year_requests: "]+=1
  
 print(result1)    
