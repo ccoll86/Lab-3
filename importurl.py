@@ -16,7 +16,7 @@ lines = file.readlines()
 for line in lines:
     if(len(line)>=56):
         total_log_requests+=1
-    return total_log_requests
+return(total_log_requests)
 
 #start looking for log requests made in the last year
 lines = file.readlines()
@@ -24,12 +24,12 @@ import datetime
 now = datetime.datetime.now
 earlier = datetime.datetime(2019, 9, 17)
 
-for line in lines:
-    data = lines.split()
-    date = data[3][1::].split(':')
-    if re.search(earlier>date<=now, line):
-       past_year_requests+=1
-    return past_year_requests
+    for line in lines:
+      data = lines.split()
+      date = data[3][1::].split(':')
+        if re.search(earlier>date<=now, line):
+            past_year_requests+=1
+return(past_year_requests)
 
 #print the output results
 print('The requests made total: ', total_log_requests) 
