@@ -14,10 +14,11 @@ past_year_requests=0
 file = open("aws.log", "r")
 
 #start looking for total log requests
-lines = file.read()
-for lines in file:
-    if(len(lines)>=56):
-        result1={lines.count('GET')}
+lines = file.readlines()
+import re
+for line in lines:
+    if re.search('GET', line):
+        print('The requests made total: ', line) 
 
 #start looking for log requests made in the last year
 lines = file.read
@@ -28,11 +29,8 @@ earlier = datetime.datetime(2019, 9, 17)
 for lines in file:
     data = lines.split()
     date = data[3][1::].split(':')
-    if(earlier>date<=now):
-        result2={lines.count(date)}
+    if re.search(earlier>date<=now, line):
+        print('The requests made last year: ', line)
 
-#printing results for question 1 and 2 
-print("This is how many log requests have been made: ", result1)    
-print("This is how many log requests have been made in the past year: ", result2)
 
 
