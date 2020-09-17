@@ -24,7 +24,7 @@ def main2():
     for line in lines:
          data = lines.split()
          date = data[3][1::].split(':')
-            if re.search(earlier>date<=now, line):
+         if re.search(earlier>date<=now, line):
                   past_year_requests+=1
             return past_year_requests
     print('The requests made last year: ', past_year_requests)
