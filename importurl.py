@@ -6,7 +6,7 @@ file = open("aws.log", "r")
 #start looking for total log requests
 def main1():
     total_log_requests=int()
-        lines = file.readlines()
+    lines = file.readlines()
         for line in lines:
             if(len(line)>=30):
                 total_log_requests+=1
@@ -16,11 +16,11 @@ def main1():
 #start looking for log requests made in the last year
 def main2():
     past_year_requests=int()
-        lines = file.readlines()
-        import datetime
-        import re
-        now = datetime.datetime.now
-        earlier = datetime.datetime(2019, 9, 17)
+    lines = file.readlines()
+    import datetime
+    import re
+    now = datetime.datetime.now
+    earlier = datetime.datetime(2019, 9, 17)
         for line in lines:
             data = lines.split()
             date = data[3][1::].split(':')
