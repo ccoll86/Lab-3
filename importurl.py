@@ -11,6 +11,7 @@ def main1():
         if(len(line)>=30):
             total_log_requests+=1
         return total_log_requests
+print('The requests made total: ', total_log_requests) 
 
 #start looking for log requests made in the last year
 def main2():
@@ -28,7 +29,6 @@ def main2():
         return past_year_requests
 
 #print the output results
-print('The requests made total: ', total_log_requests) 
 print('The requests made last year: ', past_year_requests)
 
 
