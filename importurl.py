@@ -24,7 +24,7 @@ import datetime
 now = datetime.datetime.now
 earlier = datetime.datetime(2019, 9, 17)
 
-    for line in lines:
+for line in lines:
       data = lines.split()
       date = data[3][1::].split(':')
         if re.search(earlier>date<=now, line):
