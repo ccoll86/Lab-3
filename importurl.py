@@ -1,9 +1,6 @@
 #retrieving log fles across network and creating new local location for the data
-from urllib.request import urlretrieve
-URL_PATH="https://s3.amazonaws.com/tcmg476/http_access_log"
-Local_Copy='aws.log'
-headers=urlretrieve(URL_PATH, Local_Copy)
-
+import urllib.request 
+urllib.request.urlretrieve("https://s3.amazonaws.com/tcmg476/http_access_log", "aws.log")
 
 #reading file to look for 2 patterns
 total_log_requests=int()
@@ -15,7 +12,7 @@ file = open("aws.log", "r")
 def main():
     lines = file.readlines()
     for line in lines:
-        if(len(line)>=25):
+        if(len(line)>=30):
             total_log_requests+=1
         return total_log_requests
 
