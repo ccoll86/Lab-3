@@ -15,8 +15,8 @@ file = open("aws.log", "r")
 def main():
     lines = file.readlines()
     for line in lines:
-        if(len(line)>=56):
-            total_log_requests+=0
+        if(len(line)>=25):
+            total_log_requests+=1
         return total_log_requests
 
 #start looking for log requests made in the last year
@@ -30,7 +30,7 @@ def main():
         data = lines.split()
         date = data[3][1::].split(':')
         if re.search(earlier>date<=now, line):
-              past_year_requests+=0
+              past_year_requests+=1
         return past_year_requests
 
 #print the output results
