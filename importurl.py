@@ -18,7 +18,8 @@ lines = file.readlines()
 import re
 for line in lines:
     if re.search('GET', line):
-        print('The requests made total: ', lines.count()) 
+        result1=lines.count('GET')
+        print('The requests made total: ', result1) 
 
 #start looking for log requests made in the last year
 lines = file.read
