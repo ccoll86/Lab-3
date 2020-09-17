@@ -1,15 +1,11 @@
 #retrieving log fles across network and creating new local location for the data
 import urllib.request 
 urllib.request.urlretrieve("https://s3.amazonaws.com/tcmg476/http_access_log", "aws.log")
-
-#reading file to look for 2 patterns
-total_log_requests=int()
-past_year_requests=int()
-
 file = open("aws.log", "r")
 
 #start looking for total log requests
-def main():
+def main1():
+    total_log_requests=int()
     lines = file.readlines()
     for line in lines:
         if(len(line)>=30):
@@ -17,7 +13,8 @@ def main():
         return total_log_requests
 
 #start looking for log requests made in the last year
-def main():
+def main2():
+    past_year_requests=int()
     lines = file.readlines()
     import datetime
     import re
