@@ -12,9 +12,9 @@ total_requests = 0
 last_year_requests = 0
 
 for line in file:
-      total_requests += 1
-      if line.find("1994")!= -1:
-            last_year_requests += 1
+   total_requests += 1
+   if line.find("1994")!= -1:
+      last_year_requests += 1
 file.close()
 
 #print final results found in log
