@@ -31,7 +31,7 @@ def yearly_logs():
     lines = open(Local_copy, 'r').readlines()
 
 #finding past year logs
-        for line in lines:
+     for line in lines:
             match = re.match(pattern, line)
 
             if not match:
@@ -43,7 +43,7 @@ def yearly_logs():
       y = datetime.datetime(2019, 9, 18)
       data = lines.split()
       date = data[3][1::].split(':')
-        with open (Local_copy) as y:
+      with open (Local_copy) as y:
               if (y<date>=x):
                 for b, l in enumerate (y):
                      pass
