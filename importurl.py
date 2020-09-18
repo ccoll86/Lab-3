@@ -16,8 +16,8 @@ def log_len(file):
     with open (Local_copy) as y:
         if (len(Local_copy)>=30):
             for i, l in enumerate (y):
-             pass
-          return i+1
+                pass
+    return i+1
         
         if not os.path.isfile(Local_copy):
         urlretrieve(URL, Local_copy)   
@@ -43,11 +43,11 @@ x = datetime.datetime.now
 y = datetime.datetime(2019, 9, 18)
 data = lines.split()
 date = data[3][1::].split(':')
-with open (Local_copy) as y:
+    with open (Local_copy) as y:
         if (y<date>=x):
           for b, l in enumerate (y):
              pass
-          return b+1
+    return b+1
     
 
 print('This is how many log requests have been made total: ', i)
