@@ -15,7 +15,7 @@ def log_len(file):
     lines = file.readlines()
     with open (Local_copy) as y:
         if (len(Local_copy)>=30):
-            for i, l in enumerate (y)
+            for i, l in enumerate (y):
              pass
           return i+1
         
@@ -45,7 +45,7 @@ data = lines.split()
 date = data[3][1::].split(':')
 with open (Local_copy) as y:
         if (y<date>=x):
-          for b, l in enumerate (y)
+          for b, l in enumerate (y):
              pass
           return b+1
     
