@@ -38,16 +38,16 @@ def yearly_logs():
                 continue
 
 import datetime
-      b=0
-      x = datetime.datetime.now
-      y = datetime.datetime(2019, 9, 18)
-      data = lines.split()
-      date = data[3][1::].split(':')
-      with open (Local_copy) as y:
-              if (y<date>=x):
-                for b, l in enumerate (y):
-                     pass
-        return b+1
+b=0
+x = datetime.datetime.now
+y = datetime.datetime(2019, 9, 18)
+data = lines.split()
+date = data[3][1::].split(':')
+with open (Local_copy) as y:
+     if (y<date>=x):
+     for b, l in enumerate (y):
+             pass
+return b+1
     
 
 print('This is how many log requests have been made total: ', i)
