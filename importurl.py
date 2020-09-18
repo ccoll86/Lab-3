@@ -18,9 +18,9 @@ def log_len(file):
             for i, l in enumerate (y):
                 pass
     return i+1
-        
-        if not os.path.isfile(Local_copy):
-        urlretrieve(URL, Local_copy)   
+       
+if not os.path.isfile(Local_copy):
+    urlretrieve(URL, Local_copy)   
       
 #start looking for log requests made in the last year
 def yearly_logs():
