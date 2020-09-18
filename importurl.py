@@ -37,7 +37,7 @@ def yearly_logs():
             if not match:
                 continue
 
-      import datetime
+import datetime
       b=0
       x = datetime.datetime.now
       y = datetime.datetime(2019, 9, 18)
