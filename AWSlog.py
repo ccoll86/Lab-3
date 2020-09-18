@@ -7,11 +7,10 @@ Local_copy = 'aws.log'
 import os
 
 #defining variables and finding the information in local copy of log
+def main_program():
 total_requests = 0
 last_year_requests = 0
 final_line = ""
-
-def main_program():
     for line in file:
         total_requests += 1
         if line.find("1994")!= -1:
