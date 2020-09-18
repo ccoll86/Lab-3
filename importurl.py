@@ -9,6 +9,7 @@ import re
 
 #start looking for total log requests
 i=0
+b=0
 
 #finding length of lines
 def log_len(file):
@@ -28,7 +29,6 @@ def yearly_logs():
     pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'
     lines = open(Local_copy, 'r').readlines()
     import datetime
-    b=0
     x = datetime.datetime.now
     y = datetime.datetime(2019, 9, 18)
     data = lines.split()
