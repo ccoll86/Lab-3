@@ -31,7 +31,7 @@ def yearly_logs():
     lines = open(Local_copy, 'r').readlines()
 
 #finding past year logs
-     for line in lines:
+    for line in lines:
             match = re.match(pattern, line)
 
             if not match:
