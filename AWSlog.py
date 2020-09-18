@@ -12,10 +12,10 @@ last_year_requests = 0
 final_line = ""
 
 def main_program():
-for line in file:
-    total_requests += 1
-    if line.find("1994")!= -1:
-        last_year_requests += 1
+    for line in file:
+        total_requests += 1
+        if line.find("1994")!= -1:
+            last_year_requests += 1
 file.close()
 
 #print final results found in log
