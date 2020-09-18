@@ -17,7 +17,6 @@ def log_len(file):
     with open (Local_copy) as y:
         if (len(Local_copy)>=30):
             for i, l in enumerate (y):
-                pass
     return i+1
        
 if not os.path.isfile(Local_copy):
@@ -42,7 +41,6 @@ def yearly_logs():
     with open (Local_copy) as y:
          if (y<date>=x):
             for b, l in enumerate (y):
-                 pass
     return b+1
 
 
