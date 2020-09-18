@@ -8,16 +8,17 @@ import os
 from datetime import datetime
 
 #defining variables and finding the information in local copy of log
-total_requests = 0
-last_year_requests = 0
+all_requests = 0
+ly_requests = 0
 
+#finding amount of requests in file by line reading/finding requests made in 1995 (within last year)
 for line in file:
-   total_requests += 1
+   all_requests += 1
    if line.find("1994")!= -1:
-      last_year_requests += 1
+      ly_requests += 1
 file.close()
 
-#print final results found in log
-print("This is how many requests in the log file were created ONLY within the last year (1995): ", last_year_requests)
+#print final results found in log file
+print("This is how many requests in the log file were created ONLY within the last year (1995): ", ly_requests)
 
-print("This is how many TOTAL requests were created in the entire log file: ", total_requests)
+print("This is how many TOTAL requests were created in the entire log file: ", all_requests)
