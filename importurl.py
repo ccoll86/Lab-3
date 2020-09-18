@@ -17,7 +17,7 @@ def log_len(file):
     with open (Local_copy) as y:
         if (len(Local_copy)>=30):
             for i, l in enumerate (y):
-        return i+1
+            return i+1
        
 if not os.path.isfile(Local_copy):
     urlretrieve(URL, Local_copy)   
@@ -41,7 +41,7 @@ def yearly_logs():
     with open (Local_copy) as y:
          if (y<date>=x):
             for b, l in enumerate (y):
-        return b+1
+            return b+1
 
 
 print('This is how many log requests have been made total: ', i)
