@@ -46,19 +46,18 @@ def common():
    lcommon=[]
    flog=[]
    counter=collections.counter(flog)
-   
    with open(Local_copy) as logs:
-      for line in logs:
-	try:
-		flog.append(line[line.index("GET")+4:line.index("HTTP")])		
-	except:
-		pass
-	counter = collections.Counter(flog)
-	for count in counter.most_common(1):														
-		print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
-	for count in counter.most_common():					
-		if str(count[1]) == '1':
-			lcommon.append(count[0])
+     	for line in logs:
+			try:
+				filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
+			except:
+				pass
+    counter = collections.Counter(flog)
+    for count in counter.most_common(1):														
+	print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
+    for count in counter.most_common():					
+	if str(count[1]) == '1':
+		lcommon.append(count[0])
 	if lcommon:																						
 		response = input("Display files requested only once? Y/N)".format(len(lcommon)))
 		if response == 'y' or response == 'Y':
