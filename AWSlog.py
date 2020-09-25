@@ -9,7 +9,7 @@ import re
 import collections
 from datetime import datetime
 
-#defining variables and finding the information in local copy of log
+#defining variables, months, and finding the information in local copy of log
 all_requests = 0
 ly_requests = 0
 redirect = 0
@@ -30,10 +30,12 @@ months_count ={
   "Dec": 0
 }
 
-janlogs=open("january.txt", "a+"); feblogs=open("february.txt", "a+"); marlogs=open("march.txt", "a+"); 
-aprlogs=open("april.txt", "a+"); maylogs=open("may.txt", "a+"); junlogs=open("june.txt", "a+");
-jullogs=open("july.txt", "a+"); auglogs=open("august.txt", "a+"); seplogs=open("september.txt", "a+")
-octlogs=open("octlogs.txt", "a+"); novlogs=open("november.txt", "a+"); declogs=open("december.txt", "a+")  
+janlogs=open("january.txt", "a+"); feblogs=open("february.txt", "a+"); 
+marlogs=open("march.txt", "a+"); aprlogs=open("april.txt", "a+"); 
+maylogs=open("may.txt", "a+"); junlogs=open("june.txt", "a+");
+jullogs=open("july.txt", "a+"); auglogs=open("august.txt", "a+"); 
+seplogs=open("september.txt", "a+"); octlogs=open("octlogs.txt", "a+"); 
+novlogs=open("november.txt", "a+"); declogs=open("december.txt", "a+")  
 
 #finding amount of requests in file by line reading/finding requests made in 1995 (within last year)
 for line in file:
@@ -42,28 +44,28 @@ for line in file:
         ly_requests += 1
 
 #finding most and least common
-def fileCount():
-	filelog = []
-	leastcommon = []
+def common():
+	flog = []
+	lcommon = []
 	with open(Local_copy) as logs:
 		for line in logs:
 			try:
-				filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
+				flog.append(line[line.index("GET")+4:line.index("HTTP")])		
 			except:
 				pass
-	counter = collections.Counter(filelog)
+	counter = collections.Counter(flog)
 	for count in counter.most_common(1):														
 		print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
 	for count in counter.most_common():					
 		if str(count[1]) == '1':
-			leastcommon.append(count[0])
-	if leastcommon:																						
-		response = input("Display files requested only once? Y/N)".format(len(leastcommon)))
+			lcommon.append(count[0])
+	if lcommon:																						
+		response = input("Display files requested only once? Y/N)".format(len(lcommon)))
 		if response == 'y' or response == 'Y':
-			for file in leastcommon:
+			for file in lcommon:
 				print(file)
      
-#months count and redirect/error count
+#months count and redirect/error count with regex pattern
 pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'
 lines = open(Local_copy, 'r').readlines()
 
@@ -112,14 +114,16 @@ for line in lines:
     
     else:
         continue
+
+file.close()
      
 #print final results found in log file
 print("This is how many requests in the log file were created ONLY within the last year (1995): ", ly_requests)
 print("This is how many TOTAL requests were created in the entire log file: ", all_requests)
-print("Average number for month:", round(all_requests/12,2))
-print("Average number for week: ",round(all_requests/52,2))
-print("Average number for day: ", round(all_requests/365,2))
-print("Month Count:", months_count)
+print("Average number for one month:", round(all_requests/12,2))
+print("Average number for one week: ",round(all_requests/52,2))
+print("Average number for one day: ", round(all_requests/365,2))
+print("Month Amount:", months_count)
 print("Total number of redirects:",redirect)
 print("Percentage of all requests that were redirects (3xx): {0:.2%}".format(redirect/all_requests))
 print("Error count:",error)
