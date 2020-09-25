@@ -42,26 +42,25 @@ for line in file:
       ly_requests += 1
 
 #finding most and least common
-def common():
-   lcommon=[]
-   flog=[]
-   counter=collections.counter(flog)
-   with open(Local_copy) as logs:
-     	for line in logs:
-			try
+def fileCount():
+	filelog = []
+	leastcommon = []
+	with open(LOCAL_FILE) as logs:
+		for line in logs:
+			try:
 				filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
-			except
+			except:
 				pass
-    counter = collections.Counter(flog)
-    for count in counter.most_common(1):														
-	print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
-    for count in counter.most_common():					
-	if str(count[1]) == '1':
-		lcommon.append(count[0])
-	if lcommon:																						
-		response = input("Display files requested only once? Y/N)".format(len(lcommon)))
+	counter = collections.Counter(filelog)
+	for count in counter.most_common(1):														
+		print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
+	for count in counter.most_common():					
+		if str(count[1]) == '1':
+			leastcommon.append(count[0])
+	if leastcommon:																						
+		response = input("Display files requested only once? Y/N)".format(len(leastcommon)))
 		if response == 'y' or response == 'Y':
-			for file in lcommon:
+			for file in leastcommon:
 				print(file)
      
 #months count and redirect/error count
