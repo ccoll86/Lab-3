@@ -45,7 +45,7 @@ for line in file:
 def fileCount():
 	filelog = []
 	leastcommon = []
-	with open(LOCAL_FILE) as logs:
+	with open(Local_copy) as logs:
 		for line in logs:
 			try:
 				filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
@@ -65,7 +65,7 @@ def fileCount():
      
 #months count and redirect/error count
 pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'
-lines = open(Local_file, 'r').readlines()
+lines = open(Local_copy, 'r').readlines()
 
 
 for line in lines:
