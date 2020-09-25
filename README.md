@@ -14,6 +14,12 @@ Once you download the file, you need to save a local copy to disk (a cached copy
 Marketing wants to know two things: 
 How many total requests have been made in the last year?
 How many total requests were made in the time period represented by the log?
+How many requests were made on each day? 
+How many requests were made on a week-by-week basis? Per month?
+What percentage of the requests were not successful (any 4xx status code)?
+What percentage of the requests were redirected elsewhere (any 3xx codes)?
+What was the most-requested file?
+What was the least-requested file?
 
 You will need to output this data to the screen. The format you choose to do this is up to you, but your decisions and your implementation should be logical and consistent.
 
