@@ -50,10 +50,10 @@ def common():
    with open(Local_copy) as logs:
       for line in logs:
          for line in logs:
-			try:
-				flog.append(line[line.index("GET")+4:line.index("HTTP")])		
-			except:
-				pass
+		try:
+			flog.append(line[line.index("GET")+4:line.index("HTTP")])		
+		except:
+			pass
 	counter = collections.Counter(flog)
 	for count in counter.most_common(1):														
 		print("Most common file: {} with {} requests.".format(str(count[0]), str(count[1])))
