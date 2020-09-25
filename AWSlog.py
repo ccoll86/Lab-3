@@ -115,7 +115,7 @@ for line in lines:
         continue
      
 #print final results found in log file
-totalResponses = file_len(Local_file)
+totalResponses = file_len(Local_copy)
 print("This is how many requests in the log file were created ONLY within the last year (1995): ", ly_requests)
 print("This is how many TOTAL requests were created in the entire log file: ", all_requests)
 print("Average number for month:", round(totalResponses/12,2))
