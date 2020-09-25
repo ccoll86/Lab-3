@@ -30,6 +30,7 @@ months_count ={
   "Dec": 0
 }
 
+#creating 12 local files for each month and their associated files in the log
 janlogs=open("january.txt", "a+"); feblogs=open("february.txt", "a+"); 
 marlogs=open("march.txt", "a+"); aprlogs=open("april.txt", "a+"); 
 maylogs=open("may.txt", "a+"); junlogs=open("june.txt", "a+");
@@ -43,7 +44,7 @@ for line in file:
     if line.find("1995") != -1:
         ly_requests += 1
 
-#finding most and least common
+#finding most and least requested(common)
 def common():
 	flog = []
 	lcommon = []
@@ -69,7 +70,7 @@ def common():
 pattern = r'(.*?) - (.*) \[(.*?)\] \"(.*?) (.*?)\"? (.+?) (.+) (.+)'
 lines = open(Local_copy, 'r').readlines()
 
-
+#matching files to months count local files
 for line in lines:
     match = re.match(pattern, line)
 
@@ -118,14 +119,19 @@ for line in lines:
 file.close()
      
 #print final results found in log file
+print('FINAL RESULTS:')
+print('TOTAL AND LAST YEAR REQUESTS:')
 print("This is how many requests in the log file were created ONLY within the last year (1995): ", ly_requests)
 print("This is how many TOTAL requests were created in the entire log file: ", all_requests)
+print('AVERAGES:')
 print("Average number for one month:", round(all_requests/12,2))
 print("Average number for one week: ",round(all_requests/52,2))
 print("Average number for one day: ", round(all_requests/365,2))
 print("Month Amount:", months_count)
+print('REDIRECTS, ERRORS, AND PERCENTAGES:')
 print("Total number of redirects:",redirect)
 print("Percentage of all requests that were redirects (3xx): {0:.2%}".format(redirect/all_requests))
 print("Error count:",error)
 print("Percentage of client error (4xx) requests: {0:.2%}".format(error/all_requests))	
+print('MOST AND LEAST REQUESTED FILES:')
 common()
