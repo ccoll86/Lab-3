@@ -49,7 +49,7 @@ def common():
    with open(Local_copy) as logs:
      	for line in logs:
 			try:
-				filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
+			filelog.append(line[line.index("GET")+4:line.index("HTTP")])		
 			except:
 				pass
     counter = collections.Counter(flog)
