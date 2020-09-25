@@ -36,11 +36,10 @@ jullogs=open("july.txt", "a+"); auglogs=open("august.txt", "a+"); seplogs=open("
 octlogs=open("octlogs.txt", "a+"); novlogs=open("november.txt", "a+"); declogs=open("december.txt", "a+")  
 
 #finding amount of requests in file by line reading/finding requests made in 1995 (within last year)
-def file_len():
-	for line in file:
-	   all_requests += 1
-	   if line.find("1994")!= -1:
-	      ly_requests += 1
+for line in file:
+    all_requests += 1
+    if line.find("1995") != -1:
+        ly_requests += 1
 
 #finding most and least common
 def fileCount():
@@ -115,14 +114,13 @@ for line in lines:
         continue
      
 #print final results found in log file
-totalResponses = file_len(Local_copy)
 print("This is how many requests in the log file were created ONLY within the last year (1995): ", ly_requests)
 print("This is how many TOTAL requests were created in the entire log file: ", all_requests)
-print("Average number for month:", round(totalResponses/12,2))
-print("Average number for week: ",round(totalResponses/52,2))
-print("Average number for day: ", round(totalResponses/365,2))
+print("Average number for month:", round(all_requests/12,2))
+print("Average number for week: ",round(all_requests/52,2))
+print("Average number for day: ", round(all_requests/365,2))
 print("Month Count:", months_count)
 print("Total number of redirects:",redirect)
-print("Percentage of all requests that were redirects (3xx): {0:.2%}".format(redirect/totalResponses))
+print("Percentage of all requests that were redirects (3xx): {0:.2%}".format(redirect/all_requests))
 print("Error count:",error)
-print("Percentage of client error (4xx) requests: {0:.2%}".format(error/totalResponses))	
+print("Percentage of client error (4xx) requests: {0:.2%}".format(error/all_requests))	
